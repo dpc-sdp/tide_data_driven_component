@@ -2,11 +2,10 @@
     "name": "dpc-sdp/tide_data_driven_component",
     "description": "Data Driven Component content type and related configuration for Tide Drupal 8 distribution.",
     "type": "drupal-module",
-    "license": "GPL-2.0+",
-    "version": "0.0.1",
+    "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_core": "@dev",
-        "dpc-sdp/tide_landing_page": "@dev"
+        "dpc-sdp/tide_core": "dev-feature/SDPA-2794_migrate_sdp-dpc_modules",
+        "dpc-sdp/tide_landing_page": "^1.1.11"
     },
     "repositories": {
         "drupal": {
