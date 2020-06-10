@@ -23,3 +23,11 @@ Include the Tide Data Driven Component module in your composer.json file
 ```bash
 composer require dpc-sdp/tide_data_driven_component
 ```
+
+## Component Options
+This component can take a list of options in a JSON string in the environment
+variable `DATA_DRIVEN_OPTIONS`. For example
+
+```
+DATA_DRIVEN_OPTIONS = '{"myvic_vicfreewifi":"Vic Free Wifi Map","myvic_family_violence_women_programs":"Prevention of Family Violence Against Women Programs Map"}'
+```
