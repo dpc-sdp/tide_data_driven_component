@@ -25,9 +25,14 @@ use Drupal\field\Entity\FieldConfig;
  * @see options_allowed_values()
  */
 function tide_data_driven_component_items_list(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
-  if (!$opts_env = getenv('DATA_DRIVEN_OPTIONS'))
-    $opts_env = '{"myvic_vicfreewifi":"Vic Free Wifi Map","myvic_family_violence_women_programs":"Prevention of Family Violence Against Women Programs Map"}';
-  $options = json_decode($opts_env, TRUE);
+  $options = [
+    'myvic_vicfreewifi' => 'Vic Free Wifi Map',
+    'myvic_family_violence_women_programs' => 'Prevention of Family Violence Against Women Programs Map',
+  ];
+
+  if ($opts_env = getenv('DATA_DRIVEN_OPTIONS')) {
+    $options = json_decode($opts_env, TRUE);
+  }
 
   return $options;
 }
