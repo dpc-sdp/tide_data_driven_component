@@ -1,8 +1,8 @@
 langcode: en
 status: true
-dependencies: {  }
 id: data_driven_component
-label: 'Data Driven Component'
-icon_uuid: null
-description: 'Data Drive Components including maps and graph based components driven by external data.'
+label: 'Data driven component'
+icon_uuid: 387578de-ab19-450e-bc4f-cbe60e09617c
+icon_default: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjgiIGhlaWdodD0iNzciIHZpZXdCb3g9IjAgMCA2OCA3NyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY3LjM3MTkiIGhlaWdodD0iNzYuOTA1NyIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMTEiIHk9IjEyIiB3aWR0aD0iNDUiIGhlaWdodD0iNDciIGZpbGw9IiNFMEUwRTAiLz4KPHJlY3QgeD0iMTUiIHk9IjE3IiB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSIyNiIgeT0iMTciIHdpZHRoPSIyNyIgaGVpZ2h0PSI1IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSIxNSIgeT0iMjYiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo='
+description: 'Embed a map or other data driven elements within a content page.'
 behavior_plugins: {  }

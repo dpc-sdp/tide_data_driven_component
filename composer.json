@@ -4,7 +4,7 @@
     "type": "drupal-module",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_core": "^2.0.0",
+        "dpc-sdp/tide_core": "dev-develop as 2.0.0",
         "dpc-sdp/tide_landing_page": "^2.0.0"
     },
     "repositories": {
@@ -14,5 +14,12 @@
         }
     },
     "minimum-stability": "alpha",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "extra": {
+        "patches": {
+            "dpc-sdp/tide_core": {
+                "Moved Topic and Tags field to node form sidebar - https://github.com/dpc-sdp/tide_core/pull/213": "https://github.com/dpc-sdp/tide_core/pull/213.diff"
+            }
+        }
+    }
 }
