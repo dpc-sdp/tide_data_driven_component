@@ -17,7 +17,7 @@ function tide_data_driven_component_update_8001() {
   $paragraphs = [
     'data_driven_component' => [
       'label' => 'Data driven component',
-      'description' => 'Embed a map or other data driven elements within a content page.',
+      'description' => 'Embed a map or other data driven component in your page.',
     ],
   ];
   foreach ($paragraphs as $paragraph_type_id => $data) {
