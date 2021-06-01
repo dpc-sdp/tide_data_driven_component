@@ -4,3 +4,36 @@
  * @file
  * Tide Data Driven Component module install file.
  */
+
+use Drupal\paragraphs\Entity\ParagraphsType;
+
+/**
+ * Change description and icon of data_driven_component paragraph.
+ */
+function tide_data_driven_component_update_8001() {
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $icon_dir = drupal_get_path('module', 'tide_data_driven_component') . DIRECTORY_SEPARATOR . 'icons';
+
+  $paragraphs = [
+    'data_driven_component' => [
+      'label' => 'Data driven component',
+      'description' => 'Embed a map or other data driven component in your page.',
+    ],
+  ];
+  foreach ($paragraphs as $paragraph_type_id => $data) {
+    if (!is_array($data)) {
+      $data = ['description' => $data];
+    }
+    /** @var \Drupal\paragraphs\Entity\ParagraphsType $paragraph_type */
+    $paragraph_type = ParagraphsType::load($paragraph_type_id);
+    if ($paragraph_type) {
+      foreach ($data as $key => $value) {
+        $paragraph_type->set($key, $value);
+      }
+      $paragraph_type->save();
+
+      $icon_filename = $icon_dir . DIRECTORY_SEPARATOR . $paragraph_type_id . '.svg';
+      _tide_set_paragraph_type_icon($paragraph_type, $icon_filename);
+    }
+  }
+}
