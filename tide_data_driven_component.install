@@ -62,34 +62,9 @@ function tide_data_driven_component_update_8002() {
 }
 
 /**
- * Adding data_driven_component terms.
- */
-function tide_data_driven_component_update_8003() {
-  $data_driven_options = [
-    'myvic_example_income_data' => 'Example income',
-    'myvic_example_area_with_data' => 'Example area',
-    'myvic_example_area_with_map' => 'Example area with map',
-    'myvic_vicfreewifi' => 'Vic Free Wifi Map',
-    'ch_location_finder' => 'CH Location finder',
-    'ch_exposure_sites' => 'CH Exposure Sites',
-    'vic_3yo_kinder_map' => 'Vic 3 YO kinder map',
-    'ch_vaccination_locations' => 'CH Vaccination locations',
-    'ch_testing_locations' => 'CH Testing Locations',
-  ];
-  foreach ($data_driven_options as $id => $term_label) {
-    Term::create([
-        'vid' => 'data_driven_component',
-        'name' => $term_label,
-        'field_machine_name' => $id,
-      ]
-    )->save();
-  }
-}
-
-/**
  * Transforms DATA_DRIVEN_OPTIONS variable to data_driven_component terms.
  */
-function tide_data_driven_component_update_8004() {
+function tide_data_driven_component_update_8003() {
   if ($opts_env = getenv('DATA_DRIVEN_OPTIONS')) {
     $options = json_decode($opts_env, TRUE);
     if ($options) {
