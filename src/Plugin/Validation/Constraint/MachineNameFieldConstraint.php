@@ -20,4 +20,9 @@ class MachineNameFieldConstraint extends Constraint {
    */
   public $message = 'The format is incorrect.';
 
+  /**
+   * @var string
+   */
+  public $existing_message = 'The input value exists, please try another one.';
+
 }
