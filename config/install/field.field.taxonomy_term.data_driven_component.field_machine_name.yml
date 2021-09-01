@@ -9,7 +9,7 @@ field_name: field_machine_name
 entity_type: taxonomy_term
 bundle: data_driven_component
 label: 'Machine Name'
-description: "example: \r\n<code>myvic_family_violence_women_programs</code> . <strong>When you entre the value, please confirm it with developers.</strong>"
+description: "example: \r\n<code>myvic_family_violence_women_programs</code> . <strong>When you enter the value, please confirm it with developers.</strong>"
 required: true
 translatable: false
 default_value: {  }

@@ -85,3 +85,29 @@ function tide_data_driven_component_update_8003() {
     )->save();
   }
 }
+
+/**
+ * Transforms DATA_DRIVEN_OPTIONS variable to data_driven_component terms.
+ */
+function tide_data_driven_component_update_8004() {
+  if ($opts_env = getenv('DATA_DRIVEN_OPTIONS')) {
+    $options = json_decode($opts_env, TRUE);
+    if ($options) {
+      foreach ($options as $key => $option) {
+        $existing = \Drupal::entityTypeManager()
+          ->getStorage('taxonomy_term')
+          ->loadByProperties([
+            'field_machine_name' => $key,
+          ]);
+        if (!$existing) {
+          Term::create([
+              'vid' => 'data_driven_component',
+              'name' => $option,
+              'field_machine_name' => $key,
+            ]
+          )->save();
+        }
+      }
+    }
+  }
+}
