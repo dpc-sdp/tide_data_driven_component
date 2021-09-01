@@ -14,3 +14,7 @@ config_devel:
     - field.field.paragraph.data_driven_component.field_paragraph_title.yml
     - field.storage.paragraph.field_data_driven_component.yml
     - paragraphs.paragraphs_type.data_driven_component.yml
+    - taxonomy.vocabulary.data_driven_component.yml
+    - field.field.taxonomy_term.data_driven_component.field_machine_name.yml
+    - core.entity_form_display.taxonomy_term.data_driven_component.default.yml
+    - core.entity_view_display.taxonomy_term.data_driven_component.default.yml

@@ -37,3 +37,25 @@ function tide_data_driven_component_update_8001() {
     }
   }
 }
+
+/**
+ * Adding data_driven_component vocabulary.
+ */
+function tide_data_driven_component_update_8002() {
+  $configs = [
+    'taxonomy.vocabulary.data_driven_component' => 'taxonomy_vocabulary',
+    'field.field.taxonomy_term.data_driven_component.field_machine_name' => 'field_config',
+    'core.entity_form_display.taxonomy_term.data_driven_component.default' => 'entity_form_display',
+    'core.entity_view_display.taxonomy_term.data_driven_component.default' => 'entity_view_display',
+
+  ];
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [drupal_get_path('module', 'tide_landing_page') . '/config/install'];
+  // Check if field already exported to config/sync.
+  foreach ($configs as $config => $type) {
+    $config_read = _tide_read_config($config, $config_location, TRUE);
+    $storage = \Drupal::entityTypeManager()->getStorage($type);
+    $config_entity = $storage->createFromStorageRecord($config_read);
+    $config_entity->save();
+  }
+}
