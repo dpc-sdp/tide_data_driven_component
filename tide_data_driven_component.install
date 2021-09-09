@@ -45,6 +45,7 @@ function tide_data_driven_component_update_8001() {
 function tide_data_driven_component_update_8002() {
   $configs = [
     'taxonomy.vocabulary.data_driven_component' => 'taxonomy_vocabulary',
+    'field.storage.taxonomy_term.field_machine_name'=>'field_storage_config',
     'field.field.taxonomy_term.data_driven_component.field_machine_name' => 'field_config',
     'core.entity_form_display.taxonomy_term.data_driven_component.default' => 'entity_form_display',
     'core.entity_view_display.taxonomy_term.data_driven_component.default' => 'entity_view_display',
