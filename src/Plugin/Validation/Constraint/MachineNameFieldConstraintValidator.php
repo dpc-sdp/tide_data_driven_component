@@ -25,7 +25,7 @@ class MachineNameFieldConstraintValidator extends ConstraintValidator {
           'field_machine_name' => $item->value,
         ]);
       if ($existing) {
-        $this->context->addViolation($constraint->existing_message, []);
+        $this->context->addViolation($constraint->existingMessage, []);
       }
     }
   }

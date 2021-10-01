@@ -16,13 +16,17 @@ use Symfony\Component\Validator\Constraint;
 class MachineNameFieldConstraint extends Constraint {
 
   /**
+   * Format issue message.
+   *
    * @var string
    */
   public $message = 'The format is incorrect.';
 
   /**
+   * Duplication issue message.
+   *
    * @var string
    */
-  public $existing_message = 'The input value exists, please try another one.';
+  public $existingMessage = 'The input value exists, please try another one.';
 
 }

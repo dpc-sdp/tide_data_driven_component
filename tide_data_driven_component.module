@@ -31,7 +31,7 @@ function tide_data_driven_component_items_list(FieldStorageConfig $definition, C
     'myvic_family_violence_women_programs' => 'Prevention of Family Violence Against Women Programs Map',
   ];
   $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
-    'vid' => 'data_driven_component'
+    'vid' => 'data_driven_component',
   ]);
   if ($terms) {
     $options = [];
@@ -48,7 +48,7 @@ function tide_data_driven_component_items_list(FieldStorageConfig $definition, C
  * Implements hook_entity_bundle_field_info_alter().
  */
 function tide_data_driven_component_entity_bundle_field_info_alter(&$fields, EntityTypeInterface $entity_type, $bundle) {
-  if ($entity_type->id() == 'taxonomy_term' && $bundle == 'data_driven_component'){
+  if ($entity_type->id() == 'taxonomy_term' && $bundle == 'data_driven_component') {
     if (!empty($fields['field_machine_name'])) {
       $fields['field_machine_name']->addConstraint('TideMachineNameField');
     }
