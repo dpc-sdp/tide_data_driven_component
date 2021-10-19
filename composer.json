@@ -4,8 +4,8 @@
     "type": "drupal-module",
     "license": "GPL-2.0-or-later",
     "require": {
-        "dpc-sdp/tide_core": "dev-feature/SDPA-5396-drupalcore-9 as 2.0.14",
-        "dpc-sdp/tide_landing_page": "dev-compatible-with-drupal-9 as 2.0.6"
+        "dpc-sdp/tide_core": "^3.0.0",
+        "dpc-sdp/tide_landing_page": "^3.0.0"
     },
     "repositories": {
         "drupal": {
