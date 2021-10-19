@@ -2,7 +2,7 @@ name: Data Driven Component
 type: module
 description: 'Data Driven Component content type and related configuration for Tide Drupal 8 distribution.'
 package: Tide
-core: 8.x
+core_version_requirement: ^8.9 || ^9
 dependencies:
   - dpc-sdp:tide_landing_page
 config_devel:
