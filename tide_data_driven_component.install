@@ -13,7 +13,7 @@ use Drupal\taxonomy\Entity\Term;
  */
 function tide_data_driven_component_update_8001() {
   module_load_include('inc', 'tide_core', 'includes/helpers');
-  $icon_dir = drupal_get_path('module', 'tide_data_driven_component') . DIRECTORY_SEPARATOR . 'icons';
+  $icon_dir = \Drupal::service('extension.list.module')->getPath('tide_data_driven_component') . DIRECTORY_SEPARATOR . 'icons';
 
   $paragraphs = [
     'data_driven_component' => [
@@ -52,7 +52,7 @@ function tide_data_driven_component_update_8002() {
 
   ];
   module_load_include('inc', 'tide_core', 'includes/helpers');
-  $config_location = [drupal_get_path('module', 'tide_data_driven_component') . '/config/install'];
+  $config_location = [\Drupal::service('extension.list.module')->getPath('tide_data_driven_component') . '/config/install'];
   // Check if field already exported to config/sync.
   foreach ($configs as $config => $type) {
     $config_read = _tide_read_config($config, $config_location, TRUE);
