@@ -6,13 +6,14 @@
  */
 
 use Drupal\paragraphs\Entity\ParagraphsType;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Change description and icon of data_driven_component paragraph.
  */
 function tide_data_driven_component_update_8001() {
   module_load_include('inc', 'tide_core', 'includes/helpers');
-  $icon_dir = drupal_get_path('module', 'tide_data_driven_component') . DIRECTORY_SEPARATOR . 'icons';
+  $icon_dir = \Drupal::service('extension.list.module')->getPath('tide_data_driven_component') . DIRECTORY_SEPARATOR . 'icons';
 
   $paragraphs = [
     'data_driven_component' => [
@@ -34,6 +35,55 @@ function tide_data_driven_component_update_8001() {
 
       $icon_filename = $icon_dir . DIRECTORY_SEPARATOR . $paragraph_type_id . '.svg';
       _tide_set_paragraph_type_icon($paragraph_type, $icon_filename);
+    }
+  }
+}
+
+/**
+ * Adding data_driven_component vocabulary.
+ */
+function tide_data_driven_component_update_8002() {
+  $configs = [
+    'taxonomy.vocabulary.data_driven_component' => 'taxonomy_vocabulary',
+    'field.storage.taxonomy_term.field_machine_name' => 'field_storage_config',
+    'field.field.taxonomy_term.data_driven_component.field_machine_name' => 'field_config',
+    'core.entity_form_display.taxonomy_term.data_driven_component.default' => 'entity_form_display',
+    'core.entity_view_display.taxonomy_term.data_driven_component.default' => 'entity_view_display',
+
+  ];
+  module_load_include('inc', 'tide_core', 'includes/helpers');
+  $config_location = [\Drupal::service('extension.list.module')->getPath('tide_data_driven_component') . '/config/install'];
+  // Check if field already exported to config/sync.
+  foreach ($configs as $config => $type) {
+    $config_read = _tide_read_config($config, $config_location, TRUE);
+    $storage = \Drupal::entityTypeManager()->getStorage($type);
+    $config_entity = $storage->createFromStorageRecord($config_read);
+    $config_entity->save();
+  }
+}
+
+/**
+ * Transforms DATA_DRIVEN_OPTIONS variable to data_driven_component terms.
+ */
+function tide_data_driven_component_update_8003() {
+  if ($opts_env = getenv('DATA_DRIVEN_OPTIONS')) {
+    $options = json_decode($opts_env, TRUE);
+    if ($options) {
+      foreach ($options as $key => $option) {
+        $existing = \Drupal::entityTypeManager()
+          ->getStorage('taxonomy_term')
+          ->loadByProperties([
+            'field_machine_name' => $key,
+          ]);
+        if (!$existing) {
+          Term::create([
+            'vid' => 'data_driven_component',
+            'name' => $option,
+            'field_machine_name' => $key,
+          ]
+          )->save();
+        }
+      }
     }
   }
 }
