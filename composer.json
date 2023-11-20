@@ -1,5 +1,5 @@
 {
-  "description": "Data Driven Component content type and related configuration for Tide Drupal 8 distribution.",
+  "description": "Data Driven Component content type and related configuration for Tide Drupal 10 distribution.",
   "license": "GPL-2.0-or-later",
   "minimum-stability": "alpha",
   "name": "dpc-sdp/tide_data_driven_component",
@@ -7,7 +7,7 @@
   "repositories": {
     "drupal": {
       "type": "composer",
-      "url": "https://packages.drupal.org/8"
+      "url": "https://packages.drupal.org/10"
     }
   },
   "require": {
