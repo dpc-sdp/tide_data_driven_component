@@ -6,9 +6,9 @@
  */
 
 use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\field\Entity\FieldStorageConfig;
-use Drupal\field\Entity\FieldConfig;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
 
 /**
  * Set dynamic allowed values for the data drive component field.
