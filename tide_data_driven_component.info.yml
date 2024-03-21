@@ -6,6 +6,7 @@ core_version_requirement: ^9 || ^10
 dependencies:
   - dpc-sdp:tide_landing_page
   - dpc-sdp:tide_api
+  - tide_api:tide_content_collection
 config_devel:
   install:
     - core.entity_form_display.paragraph.data_driven_component.default.yml
