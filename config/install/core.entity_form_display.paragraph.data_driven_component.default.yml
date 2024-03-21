@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.data_driven_component.field_configuration
     - field.field.paragraph.data_driven_component.field_data_driven_component
     - field.field.paragraph.data_driven_component.field_paragraph_body
     - field.field.paragraph.data_driven_component.field_paragraph_title
@@ -14,15 +15,24 @@ targetEntityType: paragraph
 bundle: data_driven_component
 mode: default
 content:
+  field_configuration:
+    type: content_collection_configuration_raw
+    weight: 104
+    region: content
+    settings:
+      schema_validation: false
+      rows: '5'
+      placeholder: ''
+    third_party_settings: {  }
   field_data_driven_component:
     type: options_select
-    weight: 3
+    weight: 103
     region: content
     settings: {  }
     third_party_settings: {  }
   field_paragraph_body:
     type: text_textarea
-    weight: 1
+    weight: 102
     region: content
     settings:
       rows: 5
@@ -30,19 +40,10 @@ content:
     third_party_settings: {  }
   field_paragraph_title:
     type: string_textfield
-    weight: 0
+    weight: 101
     region: content
     settings:
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_testing_name:
-    type: content_collection_configuration_raw
-    weight: 2
-    region: content
-    settings:
-      schema_validation: false
-      rows: '5'
       placeholder: ''
     third_party_settings: {  }
   moderation_state:
