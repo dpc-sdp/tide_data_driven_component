@@ -12,7 +12,8 @@
   },
   "require": {
     "dpc-sdp/tide_core": "dev-reference",
-    "dpc-sdp/tide_landing_page": "dev-reference"
+    "dpc-sdp/tide_landing_page": "dev-reference",
+    "dpc-sdp/tide_api": "dev-reference"
   },
   "type": "drupal-module"
 }
