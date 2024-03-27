@@ -17,7 +17,7 @@ mode: default
 content:
   field_configuration:
     type: content_collection_configuration_raw
-    weight: 104
+    weight: 2
     region: content
     settings:
       schema_validation: false
@@ -26,13 +26,13 @@ content:
     third_party_settings: {  }
   field_data_driven_component:
     type: options_select
-    weight: 103
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_paragraph_body:
     type: text_textarea
-    weight: 102
+    weight: 1
     region: content
     settings:
       rows: 5
@@ -40,7 +40,7 @@ content:
     third_party_settings: {  }
   field_paragraph_title:
     type: string_textfield
-    weight: 101
+    weight: 0
     region: content
     settings:
       size: 60
