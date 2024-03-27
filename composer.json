@@ -5,7 +5,7 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "dpc-sdp/tide_core": "^4.0.0",
-        "dpc-sdp/tide_landing_page": "^4.0.0"
+        "dpc-sdp/tide_landing_page": "^4.0.0",
         "dpc-sdp/tide_api": "dev-reference",
         "dpc-sdp/tide_search": "dev-reference"
     },
