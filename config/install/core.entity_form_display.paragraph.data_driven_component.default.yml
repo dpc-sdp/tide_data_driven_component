@@ -20,7 +20,7 @@ content:
     weight: 2
     region: content
     settings:
-      schema_validation: false
+      schema_validation: '1'
       rows: '5'
       placeholder: ''
     third_party_settings: {  }

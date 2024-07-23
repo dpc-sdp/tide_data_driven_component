@@ -20,7 +20,7 @@ content:
     type: content_collection_configuration_raw
     label: above
     settings:
-      raw_json: false
+      raw_json: '1'
     third_party_settings: {  }
     weight: 2
     region: content
