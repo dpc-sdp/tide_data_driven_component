@@ -5,10 +5,13 @@ package: Tide
 core_version_requirement: ^9 || ^10
 dependencies:
   - dpc-sdp:tide_landing_page
+  - dpc-sdp:tide_api
+  - tide_api:tide_content_collection
 config_devel:
   install:
     - core.entity_form_display.paragraph.data_driven_component.default.yml
     - core.entity_view_display.paragraph.data_driven_component.default.yml
+    - field.field.paragraph.data_driven_component.field_configuration.yml
     - field.field.paragraph.data_driven_component.field_data_driven_component.yml
     - field.field.paragraph.data_driven_component.field_paragraph_body.yml
     - field.field.paragraph.data_driven_component.field_paragraph_title.yml
@@ -16,6 +19,7 @@ config_devel:
     - paragraphs.paragraphs_type.data_driven_component.yml
     - taxonomy.vocabulary.data_driven_component.yml
     - field.storage.taxonomy_term.field_machine_name.yml
+    - field.storage.paragraph.field_configuration.yml
     - field.field.taxonomy_term.data_driven_component.field_machine_name.yml
     - core.entity_form_display.taxonomy_term.data_driven_component.default.yml
     - core.entity_view_display.taxonomy_term.data_driven_component.default.yml
