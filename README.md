@@ -1,3 +1,5 @@
+# This repository has been archived and is no longer actively maintained. If you need to create new PRs or Issues, please visit the following repository: https://github.com/dpc-sdp/tide_core.
+
 # tide_data_driven_component
 Data Driven Component component for Tide distribution
 
